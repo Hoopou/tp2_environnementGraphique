@@ -82,6 +82,8 @@ public class Connection {
 		JButton btnValider = new JButton("Valider");
 		btnValider.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				Main window = new Main();
+				window.setVisible(true);
 			}
 		});
 		btnValider.setBounds(59, 119, 138, 31);

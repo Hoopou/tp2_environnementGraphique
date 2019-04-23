@@ -21,9 +21,8 @@ import javax.swing.JCheckBox;
 import javax.swing.JList;
 import javax.swing.AbstractListModel;
 
-public class Main {
+public class Main extends JFrame{
 
-	private JFrame frmGestionDesArtistes;
 	private JTextField textFieldRecherche;
 	private JTable tableArtistes;
 	private JTextField textFieldNumero;
@@ -37,7 +36,7 @@ public class Main {
 			public void run() {
 				try {
 					Main window = new Main();
-					window.frmGestionDesArtistes.setVisible(true);
+					window.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -56,20 +55,19 @@ public class Main {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frmGestionDesArtistes = new JFrame();
-		frmGestionDesArtistes.setTitle("Gestion des artistes");
-		frmGestionDesArtistes.setBounds(100, 100, 832, 510);
-		frmGestionDesArtistes.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frmGestionDesArtistes.getContentPane().setLayout(null);
+		setTitle("Gestion des artistes");
+		setBounds(100, 100, 832, 510);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		getContentPane().setLayout(null);
 		
 		textFieldRecherche = new JTextField();
 		textFieldRecherche.setBounds(10, 28, 391, 30);
-		frmGestionDesArtistes.getContentPane().add(textFieldRecherche);
+		getContentPane().add(textFieldRecherche);
 		textFieldRecherche.setColumns(10);
 		
 		JLabel lblRechercherUnArtiste = new JLabel("Rechercher un artiste");
 		lblRechercherUnArtiste.setBounds(10, 11, 168, 14);
-		frmGestionDesArtistes.getContentPane().add(lblRechercherUnArtiste);
+		getContentPane().add(lblRechercherUnArtiste);
 		
 		JButton btnRecherche = new JButton("Recherche");
 		btnRecherche.addActionListener(new ActionListener() {
@@ -77,32 +75,32 @@ public class Main {
 			}
 		});
 		btnRecherche.setBounds(411, 28, 117, 30);
-		frmGestionDesArtistes.getContentPane().add(btnRecherche);
+		getContentPane().add(btnRecherche);
 		
 		JButton btnQuitter = new JButton("Quitter");
 		btnQuitter.setBounds(689, 32, 117, 30);
-		frmGestionDesArtistes.getContentPane().add(btnQuitter);
+		getContentPane().add(btnQuitter);
 		
 		JLabel lblArtistes = new JLabel("Artistes");
 		lblArtistes.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		lblArtistes.setBounds(10, 87, 93, 21);
-		frmGestionDesArtistes.getContentPane().add(lblArtistes);
+		getContentPane().add(lblArtistes);
 		
 		JLabel lblImageArtiste = new JLabel("image");
 		lblImageArtiste.setBackground(Color.WHITE);
 		lblImageArtiste.setHorizontalAlignment(SwingConstants.CENTER);
 		lblImageArtiste.setBounds(10, 131, 168, 116);
-		frmGestionDesArtistes.getContentPane().add(lblImageArtiste);
+		getContentPane().add(lblImageArtiste);
 		
 		JButton btnRemplacer = new JButton("Remplacer");
 		btnRemplacer.setBounds(35, 253, 117, 30);
-		frmGestionDesArtistes.getContentPane().add(btnRemplacer);
+		getContentPane().add(btnRemplacer);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		scrollPane.setBounds(216, 131, 420, 166);
-		frmGestionDesArtistes.getContentPane().add(scrollPane);
+		getContentPane().add(scrollPane);
 		
 		tableArtistes = new JTable();
 		tableArtistes.setModel(new DefaultTableModel(
@@ -127,63 +125,63 @@ public class Main {
 		
 		JButton btnNouveau = new JButton("Nouveau");
 		btnNouveau.setBounds(689, 131, 117, 30);
-		frmGestionDesArtistes.getContentPane().add(btnNouveau);
+		getContentPane().add(btnNouveau);
 		
 		JButton btnAjouter = new JButton("Ajouter");
 		btnAjouter.setBounds(689, 174, 117, 30);
-		frmGestionDesArtistes.getContentPane().add(btnAjouter);
+		getContentPane().add(btnAjouter);
 		
 		JButton btnModifier = new JButton("Modifier");
 		btnModifier.setBounds(689, 215, 117, 30);
-		frmGestionDesArtistes.getContentPane().add(btnModifier);
+		getContentPane().add(btnModifier);
 		
 		JButton btnSupprimer = new JButton("Supprimer");
 		btnSupprimer.setBounds(689, 267, 117, 30);
-		frmGestionDesArtistes.getContentPane().add(btnSupprimer);
+		getContentPane().add(btnSupprimer);
 		
 		JLabel labelInformations = new JLabel("Informations");
 		labelInformations.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		labelInformations.setBounds(10, 319, 186, 21);
-		frmGestionDesArtistes.getContentPane().add(labelInformations);
+		getContentPane().add(labelInformations);
 		
 		JLabel lblNumro = new JLabel("Num\u00E9ro:");
 		lblNumro.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblNumro.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblNumro.setBounds(10, 351, 79, 21);
-		frmGestionDesArtistes.getContentPane().add(lblNumro);
+		getContentPane().add(lblNumro);
 		
 		JLabel lblNom = new JLabel("Nom:");
 		lblNom.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblNom.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblNom.setBounds(10, 380, 79, 21);
-		frmGestionDesArtistes.getContentPane().add(lblNom);
+		getContentPane().add(lblNom);
 		
 		JLabel lblMembre = new JLabel("Membre:");
 		lblMembre.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblMembre.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblMembre.setBounds(10, 409, 79, 21);
-		frmGestionDesArtistes.getContentPane().add(lblMembre);
+		getContentPane().add(lblMembre);
 		
 		textFieldNumero = new JTextField();
 		textFieldNumero.setEditable(false);
 		textFieldNumero.setBounds(92, 351, 198, 20);
-		frmGestionDesArtistes.getContentPane().add(textFieldNumero);
+		getContentPane().add(textFieldNumero);
 		textFieldNumero.setColumns(10);
 		
 		textFieldNom = new JTextField();
 		textFieldNom.setEditable(false);
 		textFieldNom.setColumns(10);
 		textFieldNom.setBounds(92, 383, 198, 20);
-		frmGestionDesArtistes.getContentPane().add(textFieldNom);
+		getContentPane().add(textFieldNom);
 		
 		JCheckBox checkBoxMembre = new JCheckBox("");
 		checkBoxMembre.setEnabled(false);
 		checkBoxMembre.setBounds(95, 410, 195, 23);
-		frmGestionDesArtistes.getContentPane().add(checkBoxMembre);
+		getContentPane().add(checkBoxMembre);
 		
 		JScrollPane scrollPane_ListeAlbums = new JScrollPane();
 		scrollPane_ListeAlbums.setBounds(388, 351, 198, 109);
-		frmGestionDesArtistes.getContentPane().add(scrollPane_ListeAlbums);
+		getContentPane().add(scrollPane_ListeAlbums);
 		
 		JList listAlbums = new JList();
 		scrollPane_ListeAlbums.setViewportView(listAlbums);
@@ -201,6 +199,6 @@ public class Main {
 		labelImageAlbumCouverture.setHorizontalAlignment(SwingConstants.CENTER);
 		labelImageAlbumCouverture.setBackground(Color.WHITE);
 		labelImageAlbumCouverture.setBounds(638, 344, 168, 116);
-		frmGestionDesArtistes.getContentPane().add(labelImageAlbumCouverture);
+		getContentPane().add(labelImageAlbumCouverture);
 	}
 }
