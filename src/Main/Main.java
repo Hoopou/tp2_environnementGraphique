@@ -78,6 +78,11 @@ public class Main extends JFrame{
 		getContentPane().add(btnRecherche);
 		
 		JButton btnQuitter = new JButton("Quitter");
+		btnQuitter.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
+			}
+		});
 		btnQuitter.setBounds(689, 32, 117, 30);
 		getContentPane().add(btnQuitter);
 		
@@ -106,16 +111,7 @@ public class Main extends JFrame{
 		tableArtistes.setModel(new DefaultTableModel(
 			new Object[][] {
 				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
+				{null, null, null, null, null}
 			},
 			new String[] {
 				"New column", "New column", "New column", "New column", "New column"

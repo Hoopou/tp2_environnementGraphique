@@ -6,13 +6,13 @@ drop table if exists `tp2_graphique_bibliotheque_musique`.`utilisateurs`;
 
 CREATE TABLE IF NOT EXISTS `tp2_graphique_bibliotheque_musique`.`utilisateurs` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `nom` VARCHAR(45) NOT NULL,
+  `nom` VARCHAR(45) NOT NULL UNIQUE,
   `mdp` blob,
   `admin` boolean default 0,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE);
   
-  INSERT INTO `tp2_graphique_bibliotheque_musique`.`utilisateurs` (`nom`, `mdp`, `admin`) VALUES ('Admin', AES_ENCRYPT('password', 'salut'), '1');
+  INSERT INTO `tp2_graphique_bibliotheque_musique`.`utilisateurs` (`nom`, `mdp`, `admin`) VALUES ('Admin', AES_ENCRYPT('password', 'oajbwlkjnaxklcakdmkljxkm'), '1');
 
 CREATE TABLE IF NOT EXISTS `tp2_graphique_bibliotheque_musique`.`artistes` (
   `id` INT NOT NULL AUTO_INCREMENT,
@@ -53,7 +53,7 @@ INSERT INTO `tp2_graphique_bibliotheque_musique`.`albums` (`titre`, `genre`, `an
 SELECT * FROM tp2_graphique_bibliotheque_musique.artistes inner join tp2_graphique_bibliotheque_musique.albums on idArtiste=artistes.id where idartiste=1;
 
 ##exemple de requete pour le mot de passe
-Select aes_decrypt(mdp, 'salut') from utilisateurs;
+Select aes_decrypt(mdp, 'oajbwlkjnaxklcakdmkljxkm') from utilisateurs;
 
 
     

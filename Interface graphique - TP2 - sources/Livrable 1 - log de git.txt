@@ -1,0 +1,26 @@
+vince@HoopouPredator MINGW32 ~/Documents/Programmation/Java-Ecole/TP/TP2_Environnement Graphique_Vincent Boutot (master)
+$ git log
+commit 9c0a935ae6f7499cd659ed1b62858776290465ca (HEAD -> master, origin/master, origin/dev, dev)
+Author: Vincent_Boutot <VincentBoutot@live.ca>
+Date:   Tue Apr 23 13:30:52 2019 -0400
+
+    permettre de se connecter sans verifications
+
+commit bd210777f33125f457cb60bb041c453ed7460d26
+Author: Vincent_Boutot <VincentBoutot@live.ca>
+Date:   Tue Apr 23 13:20:00 2019 -0400
+
+    implementation de l'interface et ajout des objets pour l'implement de la
+    bd future
+
+commit cfff8461630f223e9f6c04795a74564a02ac33ac
+Author: Vincent_Boutot <VincentBoutot@live.ca>
+Date:   Tue Apr 23 12:43:13 2019 -0400
+
+    creation de la base de donnée
+
+commit 05af2a0648847ae9ad5a146c41dd59bdef96f7d0
+Author: Vincent_Boutot <VincentBoutot@live.ca>
+Date:   Tue Apr 23 07:33:17 2019 -0400
+
+    Projet de base
