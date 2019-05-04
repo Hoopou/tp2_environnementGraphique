@@ -1,49 +1,55 @@
 package Objects;
 
+import java.awt.image.BufferedImage;
+
 public class Artistes {
 	private Integer id;
-	private Object nom;
+	private String nom;
 	private Boolean membre;
-	private Object photo;
-	private Integer createur;
+	private BufferedImage photo = null;
+	private int createur;
 
 	public Integer getId() {
-	return id;
+		return id;
 	}
 
 	public void setId(Integer id) {
-	this.id = id;
+		this.id = id;
 	}
 
-	public Object getNom() {
-	return nom;
+	public String getNom() {
+		return nom;
 	}
 
-	public void setNom(Object nom) {
-	this.nom = nom;
+	public void setNom(String nom) {
+		this.nom = nom;
 	}
 
 	public Boolean getMembre() {
-	return membre;
+		return membre;
 	}
 
 	public void setMembre(Boolean membre) {
-	this.membre = membre;
+		this.membre = membre;
 	}
 
-	public Object getPhoto() {
-	return photo;
+	public BufferedImage getPhoto() {
+		return photo;
 	}
 
-	public void setPhoto(Object photo) {
-	this.photo = photo;
+	public void setPhoto(BufferedImage photo) {
+		try {
+			this.photo = photo;
+		} catch (Exception e) {
+			this.photo = null;
+		}
 	}
 
-	public Integer getCreateur() {
-	return createur;
+	public int getCreateur() {
+		return createur;
 	}
 
-	public void setCreateur(Integer createur) {
-	this.createur = createur;
+	public void setCreateur(int createur) {
+		this.createur = createur;
 	}
 }

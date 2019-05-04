@@ -125,9 +125,9 @@ public class Connection {
 		});
 		panelConnection_btnValider.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Utilisateurs temp = ControlleurBD.GetUtilisateur(panelConnection_ecran_utilisateur.getText(), panelConnection_ecran_MDP.getText());
-				if(temp != null) {
-					Main window = new Main();
+				Utilisateurs user = ControlleurBD.GetUtilisateur(panelConnection_ecran_utilisateur.getText(), panelConnection_ecran_MDP.getText());
+				if(user != null) {
+					Main window = new Main(user);
 					window.setVisible(true);					
 				}else {
 					JOptionPane.showMessageDialog(null, "L'utilisateur ou le mot de passe est incorrect!", "Connection", JOptionPane.ERROR_MESSAGE);
@@ -241,7 +241,7 @@ public class Connection {
 	}
 	
 	private void demandeInscriptionBD() {
-		int responseBD = ControlleurBD.AjoutUtilisateur(panelInscription_ecran_utilisateur.getText(), panelInscription_ecran_MDP.getText(), panelInscription_chexkBox_Admin.isSelected()?1:0);
+		int responseBD = ControlleurBD.AjouterUtilisateur(panelInscription_ecran_utilisateur.getText(), panelInscription_ecran_MDP.getText(), panelInscription_chexkBox_Admin.isSelected()?1:0);
 		
 		if(responseBD != ControlleurBD.OK ) {
 			if(responseBD == ControlleurBD.UTILISATEUR_EXISTANT) {

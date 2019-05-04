@@ -1,11 +1,13 @@
 package Objects;
 
+import java.awt.image.BufferedImage;
+
 public class Albums {
 	private Integer id;
-	private Object titre;
+	private String titre;
 	private String genre;
-	private Object anneeSortie;
-	private Object couverture;
+	private String anneeSortie;
+	private BufferedImage couverture;
 	private Integer idArtiste;
 
 	public Integer getId() {
@@ -16,11 +18,11 @@ public class Albums {
 	this.id = id;
 	}
 
-	public Object getTitre() {
+	public String getTitre() {
 	return titre;
 	}
 
-	public void setTitre(Object titre) {
+	public void setTitre(String titre) {
 	this.titre = titre;
 	}
 
@@ -36,16 +38,20 @@ public class Albums {
 	return anneeSortie;
 	}
 
-	public void setAnneeSortie(Object anneeSortie) {
-	this.anneeSortie = anneeSortie;
+	public void setAnneeSortie(String date) {
+	this.anneeSortie = date;
 	}
 
-	public Object getCouverture() {
+	public BufferedImage getCouverture() {
 	return couverture;
 	}
 
-	public void setCouverture(Object couverture) {
-	this.couverture = couverture;
+	public void setCouverture(BufferedImage couverture) {
+		try {
+			this.couverture = couverture;			
+		}catch(Exception e) {
+			this.couverture = null;
+		}
 	}
 
 	public Integer getIdArtiste() {
@@ -55,4 +61,5 @@ public class Albums {
 	public void setIdArtiste(Integer idArtiste) {
 	this.idArtiste = idArtiste;
 	}
+	
 }
